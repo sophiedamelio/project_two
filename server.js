@@ -19,6 +19,7 @@ require("./config/database");
 require("./config/passport");
 
 // routes will go here
+// hello
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
