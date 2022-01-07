@@ -19,7 +19,8 @@ require("./config/database");
 require("./config/passport");
 
 // routes will go here
-// hello
+let indexRoutes = require("./routes/index");
+// let usersRoutes = require("./routes/users");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -45,6 +46,7 @@ app.use(passport.session());
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
+  // locals are variables that are avail in any of the .ejs files
   res.locals.user = req.user; // assinging a property to res.locals, makes that said property (user) availiable in every
   // single ejs view
   next();
