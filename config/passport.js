@@ -16,11 +16,17 @@ passport.use(
       // refer to the lesson plan from earlier today in order to set this up
       console.log(profile, "<-- profile");
 
+      // search DB to see if user exists(profile is is google id)
+      // search db for a user with this google id
+
       User.findOne({ googleId: profile.id }, function (err, userDoc) {
         if (err) return sb(err);
 
-        if (studentDoc) {
+        // if exists
+        if (userDoc) {
+          // callback function, first arg is null, then userDoc
           return cb(null, userDoc);
+          // if user foesnt exist - look at profile for these properties
         } else {
           const newUser = new User({
             name: profile.displayName,
@@ -38,7 +44,9 @@ passport.use(
   )
 );
 
+// this function takes the userDoc (user) and grabbing the id
 passport.serializeUser(function (user, done) {
+  // this stores the users id in the cookie
   done(null, user.id);
 });
 
