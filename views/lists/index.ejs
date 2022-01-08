@@ -8,11 +8,10 @@
   </head>
   <body>
     <h2>list index page</h2>
-    <h2>Add List</h2>
     <form id="add-list-form" method="POST" action="/lists">
-        <!-- action="/users/??/lists"  -->
+        <h2>Add List</h2>
     <label>List Title</label>
-    <input type="text" required>
+    <input type="text" required name="title">
     <input type="submit" value="Add List"/>
     </form>
 </br>
@@ -27,7 +26,9 @@
         <%lists.forEach(function(l) { %>
         <tr class="content">
           <td><a href="/lists/<%= l._id%>"><%=l.title%></a></td>
-          <td>Delete button here</td>
+          <td><form id="delete-list-form" method="POST" action="/lists?_method=DELETE">
+              <input type="submit" value="Delete List">
+            </form></td>
         </tr>
         <% }) %>
       </tbody>

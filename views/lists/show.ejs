@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>list detail show page</h2>
+    <div>Title:<%=list.title%></div>
+    <div>Items:</div>
+    <% if (list.items.length) { %> <%list.items.forEach(function(l){ %>
+    <div><%=l.details%></div>
+    <!-- purchased will be a checkbox -->
+    <div><%=l.purchased%></div>
+    <% }); %> <% } else { %>
+    <div>no items yet</div>
+    <% } %>
+
+    <form id="add-list-form" method="POST" action="/lists/<%=list._id%>/items">
+      <h2>Add Item</h2>
+      <label>Item Name</label>
+      <input type="text" required name="details" />
+      <input type="submit" value="Add Item" />
+    </form>
+  </body>
+</html>
