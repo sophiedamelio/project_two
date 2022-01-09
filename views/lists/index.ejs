@@ -15,28 +15,29 @@
     <input type="submit" value="Add List"/>
     </form>
 </br>
-    <table>
+    <!-- <table>
       <thead>
         <tr id="list-table-key">
           <th>List Name</th>
           <th>delete?</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody> -->
         <%lists.forEach(function(l) { %>
         <tr class="content">
           <td><a href="/lists/<%= l._id%>"><%=l.title%></a></td>
           <td>
-          <form id="delete-list-form" method="post" action="/lists/<%=l._id%>?_method=DELETE">
-            <input type="submit" name="_method" value="DELETE">
+              
+          <form id="delete-list-form" method="POST" action="/lists/<%=l.id%>?_method=DELETE">
+              <!-- action="/lists?_method=DELETE"> -->
+            <button type="submit">delete</button>
             <!-- <input type="submit" value="Delete List"> -->
-            </form>
 
           <!-- <form id="delete-list-form" method="DELETE" action="/lists">
             </form></td> -->
         </tr>
         <% }) %>
-      </tbody>
-    </table>
+      <!-- </tbody>
+    </table> -->
   </body>
 </html>
