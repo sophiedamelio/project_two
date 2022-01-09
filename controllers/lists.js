@@ -5,10 +5,14 @@ const List = require("../models/list");
 // method GET - listCtrl.show - view details of a book
 // route is /lists/:id
 
+// delete a list
+// method DELETE - listCtrl.delete
+// URL endppoint is /lists/:id
+
 module.exports = {
   index,
   create: createList,
-  // delete: deleteList,
+  delete: deleteList,
   show,
 };
 
@@ -30,15 +34,18 @@ function index(req, res, next) {
   });
 }
 
-function createList(req, res) {
+function createList(req, res, next) {
   List.create(req.body, function (err, list) {
     res.redirect(`/lists`);
   });
 }
 
-// function deleteList(req, res) {
-//   // List.findOne({ _id: req.params.id, user: req.user }, function (err) {
-//   //   user;
-//   res.redirect("/lists");
-// }
-// }
+function deleteList(req, res, next) {
+  console.log(req.params.id);
+  if (!req.params.id) return; // (if the req.params.id does not exist, exit function)
+  List.findOneAndDelete(req.params.id, function (err, list) {
+    res.redirect(err, "/lists", {
+      list,
+    });
+  });
+}

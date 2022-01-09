@@ -11,7 +11,7 @@
     <form id="add-list-form" method="POST" action="/lists">
         <h2>Add List</h2>
     <label>List Title</label>
-    <input type="text" required name="title">
+    <input type="text"  required name="title">
     <input type="submit" value="Add List"/>
     </form>
 </br>
@@ -26,9 +26,14 @@
         <%lists.forEach(function(l) { %>
         <tr class="content">
           <td><a href="/lists/<%= l._id%>"><%=l.title%></a></td>
-          <td><form id="delete-list-form" method="POST" action="/lists?_method=DELETE">
-              <input type="submit" value="Delete List">
-            </form></td>
+          <td>
+          <form id="delete-list-form" method="post" action="/lists/<%=l._id%>?_method=DELETE">
+            <input type="submit" name="_method" value="DELETE">
+            <!-- <input type="submit" value="Delete List"> -->
+            </form>
+
+          <!-- <form id="delete-list-form" method="DELETE" action="/lists">
+            </form></td> -->
         </tr>
         <% }) %>
       </tbody>

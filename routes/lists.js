@@ -6,7 +6,7 @@ const listCtrl = require("../controllers/lists");
 router.get("/lists", listCtrl.index);
 
 router.post("/lists", listCtrl.create);
-// router.delete("/lists", listCtrl.delete);
+router.delete("/lists/:id", listCtrl.delete);
 // show page
 router.get("/lists/:id", listCtrl.show);
 router.post("/lists/:id", listCtrl.create);
