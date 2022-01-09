@@ -43,11 +43,11 @@ function createList(req, res, next) {
 function deleteList(req, res, next) {
   console.log(req.params.id);
   // if (!req.params.id) return; // (if the req.params.id does not exist, exit function)
-  List.findOneAndDelete(req.params.id, function (err, list) {
-    res.redirect(err, "/lists", {
-      list,
-    });
-  });
-  // List.deleteOne(req.params.id);
-  // res.redirect("/lists");
+  // List.findOneAndDelete(req.params.id, function (err, list) {
+  //   res.redirect(err, "/lists", {
+  //     list,
+  //   });
+  // });
+  List.deleteOne(req.params.id);
+  res.redirect("/lists");
 }

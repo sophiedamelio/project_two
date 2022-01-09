@@ -23,20 +23,26 @@
         </tr>
       </thead>
       <tbody> -->
+          <ul>
         <%lists.forEach(function(l) { %>
-        <tr class="content">
-          <td><a href="/lists/<%= l._id%>"><%=l.title%></a></td>
-          <td>
+        <!-- <tr class="content"> -->
+          <!-- <td> -->
               
-          <form id="delete-list-form" method="POST" action="/lists/<%=l.id%>?_method=DELETE">
+            <!-- </td> -->
+          <!-- <td> -->
+              
+          <form id="delete-list-form" action="/lists/<%=l.id%>?_method=DELETE" method="POST" >
               <!-- action="/lists?_method=DELETE"> -->
             <button type="submit">delete</button>
             <!-- <input type="submit" value="Delete List"> -->
-
+            <li>
+            <a href="/lists/<%= l._id%>"><%=l.title%></a>
+        </li>
           <!-- <form id="delete-list-form" method="DELETE" action="/lists">
             </form></td> -->
-        </tr>
+        <!-- </tr> -->
         <% }) %>
+    </ul>
       <!-- </tbody>
     </table> -->
   </body>
