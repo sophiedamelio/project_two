@@ -6,8 +6,8 @@
     <div>Title:<%=list.title%></div>
     <div>Items:</div>
     <% if (list.items.length) { %> <%list.items.forEach(function(i){ %>
-      <!-- /items doesnt exist as a page, is that the issue? -->
-      <form id="delete-item-form" action="/lists/<%=list.id%>/items/<%=i.id%>?_method=DELETE" method="POST" >
+      <!-- this form currently deletes the list, not the item -->
+      <form id="delete-item-form" action="/lists/<%=list.id%>/items?_method=DELETE" method="POST" >
         <button type="submit">purchased</button>
       </form>
       
