@@ -48,6 +48,12 @@ function deleteList(req, res, next) {
   //     list,
   //   });
   // });
-  List.deleteOne(req.params.id);
-  res.redirect("/lists");
+
+  // what do I have to wait to happen before I send response back to the client
+  // second argument
+  // i have to wait for the list to be found?
+  List.findOneAndDelete(req.params.id, function (err, listDoc) {
+    // listDoc.save();
+    res.redirect("/lists");
+  });
 }
