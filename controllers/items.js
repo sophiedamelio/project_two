@@ -2,6 +2,7 @@ const List = require("../models/list");
 
 module.exports = {
   create: createItem,
+  delete: deleteItem,
 };
 
 function createItem(req, res, next) {
@@ -22,3 +23,27 @@ function createItem(req, res, next) {
     });
   });
 }
+
+// delete an item off of a list (check it as purchased)
+// method DELETE  - itemCtrl.delete?
+// /items/:id
+
+function deleteItem(req, res, next) {
+
+  List.findById(req.params.id, function(err, listDoc) {
+    // listDoc = req.params.id;
+    
+    Item.findOne(req.params.id, function (err, itemDoc) {
+      // need to edit the itemsSchema
+      // pop? take off the item that is req.params.id??
+      // .filter?
+
+      listDoc.items.splice(1)
+      listDoc.save(function (err) {
+    res.redirect(`/lists/${itemDoc._id}`);
+      });
+  })
+});
+}
+
+

@@ -1,23 +1,31 @@
 <%- include('../partials/header') %>
+
     <h2>list detail show page</h2>
     <% if (list !== undefined) { %>
 
     <div>Title:<%=list.title%></div>
     <div>Items:</div>
-    <% if (list.items.length) { %> <%list.items.forEach(function(l){ %>
-    <div><%=l.details%></div>
+    <% if (list.items.length) { %> <%list.items.forEach(function(i){ %>
+      <!-- /items doesnt exist as a page, is that the issue? -->
+      <form id="delete-item-form" action="/lists/<%=list.id%>/items/<%=i.id%>?_method=DELETE" method="POST" >
+        <button type="submit">purchased</button>
+      </form>
+      
+
+    <div><%=i.purchased%></div>
+    <div><%=i.details%></div>
     <!-- purchased will be a checkbox -->
-    <div><%=l.purchased%></div>
     <% }); %> <% } else { %>
     <div>no items yet</div>
     <% } %>
 
-    <form id="add-list-form" method="POST" action="/lists/<%=list._id%>/items">
+    <form id="add-item-form" method="POST" action="/lists/<%=list._id%>/items">
       <h2>Add Item</h2>
       <label>Item Name</label>
-      <input type="text" required name="details" />
+      <input type="text"  name="details" />
       <input type="submit" value="Add Item" />
     </form>
     <% }%>
-    <% } %> <%- include('../partials/footer') %>
+
+<%- include('../partials/footer') %>
 

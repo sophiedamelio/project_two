@@ -19,6 +19,7 @@
   margin-top: -5px;
 }
 
-.nav-bar-wrapper {
+#nav-bar-wrapper {
   background-color: lightblue;
+  color: red;
 }

@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const itemsSchema = new Schema({
   details: String,
-  purchased: Boolean,
+  purchased: {
+    type: Boolean,
+    default: false,
+  }
 });
 
 const listSchema = new Schema(
