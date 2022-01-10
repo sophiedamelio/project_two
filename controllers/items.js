@@ -1,5 +1,7 @@
 const List = require("../models/list");
 
+// var chalk = import("chalk");
+
 module.exports = {
   create: createItem,
   delete: deleteItem,
@@ -31,21 +33,22 @@ function createItem(req, res, next) {
 function deleteItem(req, res, next) {
   // try logging out step by step, see what I am accessing (req.params.id, etc)
 
-  console.log(req.params.id)
+  // console.log(req.params.id)
   // req.params.id is the listDoc ID
   List.findById(req.params.id, function(err, listDoc) {
     // listDoc = req.params.id;
     
-      // need to edit the itemsSchema
-      // pop? take off the item that is req.params.id??
-      // .filter?
-    // this says find the 
-
-    // i think it is deleting the list, not the item right now
-
+   
+    // listDoc.items._id === req.params.id once we found the item?
+    // Items.find(req.params.id, function (err, itemDoc) {
     const itemToBeDeleted = listDoc.items.filter((item, index, arr) => {
-      // pop deletes it?
-      // this currently selects two items...
+     
+      // this currently selects multiple items...
+
+      // this filter function needs to involve this
+      
+      // console.log(listDoc.items[0]["_id"], '<-- item to be deleted?') OR
+      // the req.params.id of the item that is clicked on
       arr.pop()
       return item
     });
@@ -56,7 +59,8 @@ function deleteItem(req, res, next) {
     res.redirect(`/lists/${listDoc._id}`); // this line might be messing with it?
     });
 
-  });
+  // });
+});
 }
 
 
