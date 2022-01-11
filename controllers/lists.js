@@ -18,7 +18,7 @@ module.exports = {
 };
 
 function show(req, res, next) {
-  List.findById(req.params.id, function (err, list) {
+  List.findById(req.params.listId, function (err, list) {
     res.render(`lists/show`, {
       title: "List details",
       list,
@@ -42,7 +42,7 @@ function createList(req, res, next) {
 }
 
 function deleteList(req, res, next) {
-  console.log(req.params.id);
+  console.log(req.params.listId);
   // if (!req.params.id) return; // (if the req.params.id does not exist, exit function)
   // List.findOneAndDelete(req.params.id, function (err, list) {
   //   res.redirect(err, "/lists", {
@@ -53,7 +53,7 @@ function deleteList(req, res, next) {
   // what do I have to wait to happen before I send response back to the client
   // second argument
   // i have to wait for the list to be found?
-  List.findOneAndDelete(req.params.id, function (err, listDoc) {
+  List.findOneAndDelete(req.params.listId, function (err, listDoc) {
     // listDoc.save();
     res.redirect("/lists");
   });

@@ -7,10 +7,10 @@ router.get("/lists", listCtrl.index);
 
 router.post("/lists", isLoggedIn, listCtrl.create);
 // show page
-router.get("/lists/:id", listCtrl.show);
+router.get("/lists/:listId", listCtrl.show);
 router.post("/lists/:id", listCtrl.create);
 
-router.delete("/lists/:id", listCtrl.delete);
+router.delete("/lists/:listId", listCtrl.delete);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

@@ -1,4 +1,5 @@
 const List = require("../models/list");
+const Items = require("../models/list");
 
 // var chalk = import("chalk");
 
@@ -8,7 +9,7 @@ module.exports = {
 };
 
 function createItem(req, res, next) {
-  List.findById(req.params.id, function (err, listDoc) {
+  List.findById(req.params.listId, function (err, listDoc) {
     // // req.body.list = listDoc._id;
     // List.items.create(req.body, function (err, item) {
     //   res.redirect(`/lists/${listDoc._id}`);
@@ -35,26 +36,28 @@ function deleteItem(req, res, next) {
 
   // console.log(req.params.id)
   // req.params.id is the listDoc ID
-  List.findById(req.params.id, function(err, listDoc) {
+  List.findById(req.params.listId, function(err, listDoc) {
     // listDoc = req.params.id;
     
    
     // listDoc.items._id === req.params.id once we found the item?
     // Items.find(req.params.id, function (err, itemDoc) {
-    const itemToBeDeleted = listDoc.items.filter((item, index, arr) => {
+
+
+    
+  listDoc.items.pull({_id: req.params.itemId});
+  // ( item => item._id === req.params.itemId);
      
       // this currently selects multiple items...
 
       // this filter function needs to involve this
-      
       // console.log(listDoc.items[0]["_id"], '<-- item to be deleted?') OR
-      // the req.params.id of the item that is clicked on
-      arr.pop()
-      return item
-    });
 
-    console.log(itemToBeDeleted , `<-- item to be deleted`);
+      // the req.params.id of the item that is clicked on
+      // arr.pop()
     
+  console.log(listDoc.items, `<-- item to be deleted`);
+
     listDoc.save(function (err) {
     res.redirect(`/lists/${listDoc._id}`); // this line might be messing with it?
     });
