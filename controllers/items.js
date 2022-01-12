@@ -9,7 +9,9 @@ module.exports = {
 };
 
 function createItem(req, res, next) {
-  List.findById(req.params.listId, function (err, listDoc) {
+
+
+  List.findById(req.params.listId, function (err, list) {
     // // req.body.list = listDoc._id;
     // List.items.create(req.body, function (err, item) {
     //   res.redirect(`/lists/${listDoc._id}`);
@@ -18,11 +20,12 @@ function createItem(req, res, next) {
     // req.body = listDoc.items;
     // want to display the whole items prop of list here
 
-    
+    list.user = req.user._id
+    list.save();
 
-    listDoc.items.push(req.body);
-    listDoc.save(function (err) {
-      res.redirect(`/lists/${listDoc._id}`);
+    list.items.push(req.body);
+    list.save(function (err) {
+      res.redirect(`/lists/${list._id}`);
     });
   });
 }

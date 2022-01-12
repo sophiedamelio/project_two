@@ -5,12 +5,13 @@ const listCtrl = require("../controllers/lists");
 
 router.get("/lists", listCtrl.index);
 
+//
 router.post("/lists", isLoggedIn, listCtrl.create);
 // show page
 router.get("/lists/:listId", listCtrl.show);
-router.post("/lists/:id", listCtrl.create);
+router.post("/lists/:id", isLoggedIn, listCtrl.create);
 
-router.delete("/lists/:listId", listCtrl.delete);
+router.delete("/lists/:listId", isLoggedIn, listCtrl.delete);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

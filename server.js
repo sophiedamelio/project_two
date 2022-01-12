@@ -39,7 +39,7 @@ app.use(cookieParser());
 // app.use(express.static(__dirname, 'css'));
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, 'css')));
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // ^^ i added this
 
