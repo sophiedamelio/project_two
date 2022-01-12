@@ -35,38 +35,19 @@ function createItem(req, res, next) {
 // /items/:id
 
 function deleteItem(req, res, next) {
-  // try logging out step by step, see what I am accessing (req.params.id, etc)
-
-  // console.log(req.params.id)
-  // req.params.id is the listDoc ID
   List.findById(req.params.listId, function(err, listDoc) {
-    // listDoc = req.params.id;
     
-   
-    // listDoc.items._id === req.params.id once we found the item?
-    // Items.find(req.params.id, function (err, itemDoc) {
+  // this is a mongoose method for filtering/searching / pulling a specific listDoc
+  // this is based on req.params.itemId, which is the item that was clicked on 
+  // to be deleted
+    listDoc.items.pull({_id: req.params.itemId});
 
-
-    
-  listDoc.items.pull({_id: req.params.itemId});
-  // ( item => item._id === req.params.itemId);
-     
-      // this currently selects multiple items...
-
-      // this filter function needs to involve this
-      // console.log(listDoc.items[0]["_id"], '<-- item to be deleted?') OR
-
-      // the req.params.id of the item that is clicked on
-      // arr.pop()
-    
-  console.log(listDoc.items, `<-- item to be deleted`);
+    console.log(listDoc.items, `<-- item to be deleted`);
 
     listDoc.save(function (err) {
-    res.redirect(`/lists/${listDoc._id}`); // this line might be messing with it?
+      res.redirect(`/lists/${listDoc._id}`); // this line might be messing with it?
     });
-
-  // });
-});
+  });
 }
 
 

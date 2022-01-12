@@ -13,14 +13,4 @@
     <div id="title-wrapper">
     <h2>Wishlist City</h2>
     </div>
-    <nav>
-        <div id="nav-bar-wrapper">
-          <a id="home-link" href="/lists">home</a>
-            <% if (user) { %>
-            <span>Hi <%= user.name %> </span>
-            <button class="nav-bar-button"><a href="/logout">Log Out</a></button>
-            <% } else { %>
-            <a href="/auth/google"> Login with Google</a>
-            <% } %>
-        </div>
-      </nav>
+    

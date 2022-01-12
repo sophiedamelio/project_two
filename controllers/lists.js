@@ -54,26 +54,9 @@ function createList(req, res, next) {
 }
 
 function deleteList(req, res, next) {
-  // 
-  // console.log(req.params.listId);
   if (!req.params.listId) return; // (if the req.params.id does not exist, exit function)
 
-  // currently if you click, anyone that is signed in can delete
-  // maybe do list .findOne
-  // check to see if the user id is a part of it
-  // if not, exit function with return
-
-  // else , findOne and Delete
-  
-  // if (list.user === req.user._id) {
-
-    List.findOneAndDelete(req.params.listId, function (err, listDoc) {
-      // user id !== listdoc user id , return
-      // listDoc.save();
-      // listDoc.user = req.user._id;
-      // listDoc.save();
-      // console.log(listDoc.user, "<---- list.user");
-      res.redirect( "/lists");
-    });
-  // }
+  List.findOneAndDelete(req.params.listId, function (err, listDoc) {
+    res.redirect( "/lists");
+  });
 }
