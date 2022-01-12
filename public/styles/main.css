@@ -11,13 +11,33 @@ h2 {
   color: red;
   background-color: pink;
   font-family: "New Order", sans-serif;
-  padding: 10px 20px;
-  border-radius: 20%;
+  border-radius: 25px;
   width: 100px;
+  height: 30px;
+  border: none;
+}
+
+.nav-bar-button:hover {
+  color: red;
+  background-color: blue;
+  font-family: "New Order", sans-serif;
+  border-radius: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
 }
 
 a {
   color: red;
+  text-decoration: none;
+}
+
+#home-link {
+  text-decoration: none;
+}
+
+#home-link:hover {
+  text-decoration: underline;
 }
 
 #nav-bar-wrapper {
@@ -53,6 +73,41 @@ a {
 
 .index-page button {
   color: red;
+  font-family: "New Order", sans-serif;
+}
+
+#add-list-form {
+  font-family: "New Order", sans-serif;
+}
+
+#add-list-form {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.standard-btn button {
+  color: red;
+  background-color: pink;
+  font-family: "New Order", sans-serif;
+  border-radius: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
+}
+
+#add-list-form:hover button {
+  color: red;
+  background-color: blue;
+  font-family: "New Order", sans-serif;
+  border-radius: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
+}
+
+#each-list {
+  display: flex;
+  flex-wrap: wrap;
   font-family: "New Order", sans-serif;
 }
 

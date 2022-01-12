@@ -25,9 +25,17 @@ $header-align: space-around;
 
 $flex-column: column;
 $flex-center: center;
-$button-padding: 10px 20px;
+
 $button-width: 100px;
-$button-radius: 20%;
+$button-height: 30px;
+$button-radius: 25px;
+$button-border: none;
+
+$underline-hover: underline;
+$no-text-decoration: none;
+
+$wrap: wrap;
+$no-wrap: nowrap;
 
 
 
@@ -50,16 +58,37 @@ h2 {
   color: $color_red;
   background-color: $color_pink;
   font-family: $content-font;
-  padding: $button-padding;
   border-radius: $button-radius;
   width: $button-width;
+  height: $button-height;
+  border: $button-border;
 }
+.nav-bar-button:hover {
+    color: $color_red;
+    background-color: $color_blue;
+    font-family: $content-font;
+    border-radius: $button-radius;
+    width: $button-width;
+    height: $button-height;
+    border: $button-border;
+  }
+
 
 a {
     color: $color_red;
+    text-decoration: $no-text-decoration;
+
   }
 
-  #nav-bar-wrapper {
+#home-link {
+    text-decoration: $no-text-decoration;
+    }
+
+#home-link:hover {
+    text-decoration: $underline-hover;
+    };
+
+#nav-bar-wrapper {
     display: $header-position;
     flex-direction: $header-direction;
     color: $color_blue;
@@ -67,7 +96,7 @@ a {
     font-family: $content-font;
   }
 
-  #title-wrapper {
+#title-wrapper {
     display: $header-position;
     flex-direction: $header-direction;
     color: $color_red;
@@ -94,5 +123,42 @@ a {
 
 .index-page button {
     color: $color_red;
+    font-family: $content-font;
+}
+
+#add-list-form {
+    font-family: $content-font;
+}
+
+#add-list-form {
+    flex-direction: $header-direction;
+    flex-wrap: $no-wrap;
+}
+
+ .standard-btn button {
+    color: $color_red;
+    background-color: $color_pink;
+    font-family: $content-font;
+    border-radius: $button-radius;
+    width: $button-width;
+    height: $button-height;
+    border: $button-border;
+}
+
+#add-list-form:hover button {
+    color: $color_red;
+    background-color: $color_blue;
+    font-family: $content-font;
+    border-radius: $button-radius;
+    width: $button-width;
+    height: $button-height;
+    border: $button-border;
+}
+
+
+
+#each-list {
+    display: $header-position;
+    flex-wrap: $wrap;
     font-family: $content-font;
 }

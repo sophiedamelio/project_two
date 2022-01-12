@@ -6,7 +6,6 @@
     <div>Title:<%=list.title%></div>
     <div>Items:</div>
     <% if (list.items.length) { %> <%list.items.forEach(function(i){ %>
-      <!-- this form currently deletes the list, not the item -->
       <form id="delete-item-form" action="/lists/<%=list.id%>/items/<%=i._id%>?_method=DELETE" method="POST" >
         <button type="submit">purchased</button>
       </form>
@@ -14,7 +13,6 @@
 
     <div><%=i.purchased%></div>
     <div><%=i.details%></div>
-    <!-- purchased will be a checkbox -->
     <% }); %> <% } else { %>
     <div>no items yet</div>
     <% } %>
