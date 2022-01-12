@@ -1,16 +1,98 @@
 // define standard variables and values for website
+
+// logistics first, frameworks
+// font, text size, border radius, buttons, links (change ejs to button?)
+// lists, inputs (change?), shadows?, margins, positioning?
+
+// delete button inline with list name, on right
+// logout button on right
+// home on left
+// hello user in center (hi, you)
+// new list form
+// new item form
+
+@import url("https://use.typekit.net/pgj0sqt.css");
+@import url("https://use.typekit.net/pgj0sqt.css");
+
+$content-font: 'New Order', sans-serif;
+$header-font: 'Opake', sans-serif;
+$header-font-size: 25px;
+$header-font-weight: lighter;
+$header-position: flex;
+$header-direction: row;
+$header-align: space-around;
+
+
+$flex-column: column;
+$flex-center: center;
+$button-padding: 10px 20px;
+$button-width: 100px;
+$button-radius: 20%;
+
+
+
+
 $color_red: red;
+$color_blue: blue;
+$color_pink: pink;
+
 
 h2 {
   color: $color_red;
+  font-family: $header-font;
+  font-size: $header-font-size;
+  font-weight: $header-font-weight;
 }
 
 // $color_red: red;
 
-button {
+ .nav-bar-button {
   color: $color_red;
+  background-color: $color_pink;
+  font-family: $content-font;
+  padding: $button-padding;
+  border-radius: $button-radius;
+  width: $button-width;
 }
 
 a {
     color: $color_red;
   }
+
+  #nav-bar-wrapper {
+    display: $header-position;
+    flex-direction: $header-direction;
+    color: $color_blue;
+    justify-content: $header-align;
+    font-family: $content-font;
+  }
+
+  #title-wrapper {
+    display: $header-position;
+    flex-direction: $header-direction;
+    color: $color_red;
+    justify-content: $header-align;
+  }
+
+// do i want the index page left aligned?
+
+.index-page #index-header {
+    display: $header-position;
+    flex-direction: $flex-column;
+    justify-content: $flex-center;
+}
+
+.index-page h2 {
+    color: $color_blue;
+    font-family: $header-font;
+};
+
+.index-page p {
+    color: $color_blue;
+    font-family: $content-font;
+};
+
+.index-page button {
+    color: $color_red;
+    font-family: $content-font;
+}

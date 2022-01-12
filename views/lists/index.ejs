@@ -17,15 +17,11 @@
       <tbody> -->
           <ul>
         <%lists.forEach(function(l) { %>
-        <!-- <tr class="content"> -->
-          <!-- <td> -->
-              
-            <!-- </td> -->
-          <!-- <td> -->
               
           <form id="delete-list-form" action="/lists/<%=l.id%>?_method=DELETE" method="POST" >
-              <!-- action="/lists?_method=DELETE"> -->
-            <buttonx type="submit">delete</button>
+      
+            <button type="submit">delete</button>
+
             <!-- <input type="submit" value="Delete List"> -->
             <li>
             <a href="/lists/<%= l._id%>"><%=l.title%></a>
