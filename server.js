@@ -7,7 +7,6 @@ var session = require("express-session");
 var passport = require("passport");
 var methodOverride = require("method-override");
 var chalk = import("chalk");
-// var tailwindCss = require("tailwindcss");
 
 // load the env vars
 require("dotenv").config();
@@ -36,15 +35,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// app.use(express.static(__dirname, 'css'));
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(path.join(__dirname, 'css')));
-// app.use(express.static('public'));
 
-// ^^ i added this
 
-// app.use(tailwindCss);
-// ^^ check on this line
 
 // mount the session middleware
 app.use(
