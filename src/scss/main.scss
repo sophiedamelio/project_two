@@ -14,6 +14,7 @@
 // nest these like they should be
 // image - vh 100?
 
+
 @import url("https://use.typekit.net/pgj0sqt.css");
 @import url("https://use.typekit.net/pgj0sqt.css");
 
@@ -23,16 +24,21 @@ $header-font-size: 25px;
 $header-font-weight: lighter;
 $header-position: flex;
 $header-direction: row;
-$header-align: space-around;
-
+$header-align: space-evenly;
 
 $flex-column: column;
 $flex-center: center;
+$align-center: center;
+$flex-start: flex-start;
+
+$grid: grid;
 
 $button-width: 100px;
 $button-height: 30px;
 $button-radius: 25px;
 $button-border: none;
+
+$input-border: 1.5px solid rgb(196, 86, 73, 77);
 
 $underline-hover: underline;
 $no-text-decoration: none;
@@ -40,142 +46,251 @@ $no-text-decoration: none;
 $wrap: wrap;
 $no-wrap: nowrap;
 
-
 $bg-img-height: 100vh;
 $bg-position: center;
 $bg-repeat: no-repeat;
 $bg-size: cover;
 
-$color_red: red;
-$color_blue: blue;
-$color_pink: pink;
+$color-red: rgb(196, 86, 73, 77);
+$color-dark-red: rgb(110, 46, 53, 43);
+$color-purple: rgb(163, 153, 195);
+$color-green: rgb(106, 147, 121);
+$color-orange: rgb(214, 147, 98);
+$color-beige: rgb(255,235,205);
+$color-brown: rgb(71, 62, 59, 28);
+$color-light-brown: rgb(186, 171, 149);
 
-$three_bubs_bg_img: url("https://i.imgur.com/YCF2ZwE.png");
+$standard-padding: 10vh;
+$small-padding: 1vh;
 
+$three_bubs_bg_img: url("https://i.imgur.com/0I7lXeI.png");
+$single_bg_img: url("https://i.imgur.com/rIwvHeK.png");
+
+* {
+    background-color: $color-beige;
+}
+.buttonClass {
+    color: $color-dark-red;
+    background-color: $color-orange;
+    font-family: $content-font;
+    border-radius: $button-radius;
+    width: $button-width;
+    height: $button-height;
+    border: $button-border;
+}
+
+.buttonHoverClass {
+    color: $color-beige;
+    background-color: $color-brown;
+    font-family: $content-font;
+    border-radius: $button-radius;
+    width: $button-width;
+    height: $button-height;
+    border: $button-border;
+}
+
+.inputClass {
+    border: $input-border;
+    font-family: $content-font;
+    border-radius: $button-radius;
+}
+
+
+.threeBubsBgClass {
+    background-image: $three_bubs_bg_img;
+    background-color: $color-beige;
+    height: $bg-img-height;
+    background-position: $bg-position;
+    background-repeat: $bg-repeat;
+    background-size: $bg-size;
+}
+
+.singleBgClass {
+    background-image: $single_bg_img;
+    background-color: $color-beige;
+    height: $bg-img-height;
+    background-position: $bg-position;
+    background-repeat: $bg-repeat;
+    background-size: $bg-size;
+}
+
+.listClass {
+    display: $grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: $content-font;
+    padding: $small-padding;
+    align-items: baseline;
+}
 
 h2 {
-  color: $color_red;
+  color: $color-red;
   font-family: $header-font;
   font-size: $header-font-size;
   font-weight: $header-font-weight;
 }
 
-// $color_red: red;
 
- .nav-bar-button {
-  color: $color_red;
-  background-color: $color_pink;
-  font-family: $content-font;
-  border-radius: $button-radius;
-  width: $button-width;
-  height: $button-height;
-  border: $button-border;
-}
-.nav-bar-button:hover {
-    color: $color_red;
-    background-color: $color_blue;
-    font-family: $content-font;
-    border-radius: $button-radius;
-    width: $button-width;
-    height: $button-height;
-    border: $button-border;
-  }
-
-
-a {
-    color: $color_red;
-    text-decoration: $no-text-decoration;
-
-  }
-
-#home-link {
-    text-decoration: $no-text-decoration;
+nav { 
+    #nav-bar-wrapper {
+        display: $header-position;
+        flex-direction: $header-direction;
+        color: $color-brown;
+        justify-content: $header-align;
+        font-family: $content-font;
     }
 
-#home-link:hover {
-    text-decoration: $underline-hover;
-    };
+    a {
+        color: $color-red;
+        text-decoration: $no-text-decoration;
+    }
 
-#nav-bar-wrapper {
-    display: $header-position;
-    flex-direction: $header-direction;
-    color: $color_blue;
-    justify-content: $header-align;
-    font-family: $content-font;
-  }
+    a:hover {
+        text-decoration: $underline-hover;
+    }
 
-#title-wrapper {
-    display: $header-position;
-    flex-direction: $header-direction;
-    color: $color_red;
-    justify-content: $header-align;
-  }
+    button {
+       @extend .buttonClass
+    }
+
+    .nav-bar-button:hover {
+        @extend .buttonHoverClass
+    }
+
+
+    h2 {
+        display: $header-position;
+        flex-direction: $header-direction;
+        color: $color-red;
+        justify-content: $header-align;
+    }
+}
+
 
 // do i want the index page left aligned?
+// lists/index is called home page
 
-.index-page #index-header {
+
+.index-page {
+    #full-index-page {
+        @extend .threeBubsBgClass;
+        display: $header-position;
+        flex-direction: $flex-column;
+        padding-top: $standard-padding;
+        align-items: $align-center;
+        flex-wrap: $no-wrap;
+    }
+
+    #index-header {
+        display: $header-position;
+        flex-direction: $flex-column;
+        justify-content: $flex-center;
+    }
+
+    h2 {
+        color: $color-brown;
+        font-family: $header-font;
+    }
+
+    p {
+        color: $color-brown;
+        font-family: $content-font;
+    }
+    button {
+        @extend .buttonClass
+    }
+    button:hover {
+        @extend .buttonHoverClass
+    }
+    
+}
+
+
+
+.home-page {
+    #add-list-form {
+        font-family: $content-font;
+    }
+
+    #add-list-form {
+        flex-direction: $header-direction;
+        flex-wrap: $no-wrap;
+    }
+
+    button {
+        @extend .buttonClass;
+        align-items: $align-center;
+    }
+
+    button:hover {
+        @extend .buttonHoverClass;
+        justify-items: $align-center;
+    }
+
+    #full-home-page {
+        @extend .threeBubsBgClass;
+        padding: $standard-padding;
+        display: $header-position;
+        flex-direction: $flex-column;
+        align-items: $align-center;
+        flex-wrap: $no-wrap;
+
+    } 
+
+    input {
+        @extend .inputClass;
+    }
+
+    #input-text {
+        color: $color-brown;
+    } 
+}
+
+
+
+body {
+    #each-list {
+        @extend .listClass;
+    }
+}
+
+.show-page {
+    @extend .singleBgClass;
+    padding: $standard-padding;
     display: $header-position;
     flex-direction: $flex-column;
-    justify-content: $flex-center;
-}
-
-.index-page h2 {
-    color: $color_blue;
-    font-family: $header-font;
-};
-
-.index-page p {
-    color: $color_blue;
-    font-family: $content-font;
-};
-
-.index-page button {
-    color: $color_red;
-    font-family: $content-font;
-}
-
-#add-list-form {
-    font-family: $content-font;
-}
-
-#add-list-form {
-    flex-direction: $header-direction;
+    align-items: $flex-start;
     flex-wrap: $no-wrap;
-}
-
- .standard-btn button {
-    color: $color_red;
-    background-color: $color_pink;
+    // ^^ same as whole home page, maybe index too
     font-family: $content-font;
-    border-radius: $button-radius;
-    width: $button-width;
-    height: $button-height;
-    border: $button-border;
-}
+    display: $header-direction;
 
-#add-list-form:hover button {
-    color: $color_red;
-    background-color: $color_blue;
-    font-family: $content-font;
-    border-radius: $button-radius;
-    width: $button-width;
-    height: $button-height;
-    border: $button-border;
-}
+    button {
+        @extend .buttonClass
+    }
+    button:hover {
+        @extend .buttonHoverClass
+    }
 
+    input {
+        @extend .inputClass;
+    }
 
+    .list-of-items {
+        color: $color-brown
+    }
 
-#each-list {
-    display: $header-position;
-    flex-wrap: $wrap;
-    font-family: $content-font;
-}
+    #input-add-item {
+        color: $color-brown;
+    }
 
-#body-wrapper {
-    background-image: $three_bubs_bg_img;
-    background-color: $color_pink;
-    height: $bg-img-height;
-    background-position: $bg-position;
-    background-repeat: $bg-repeat;
-    background-size: $bg-size;
+    // #each-item {
+    //     @extend .listClass;
+    // }
+
+    // these need to be inline, like some other Els..
+    // .list-of-items {
+    //     // display: $grid;
+    //     // grid-template-columns: 1fr 1fr;
+    //     // align-items: baseline;
+    // }
 }
