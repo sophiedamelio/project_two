@@ -58,6 +58,7 @@ $color-green: rgb(106, 147, 121);
 $color-orange: rgb(214, 147, 98);
 $color-beige: rgb(255,235,205);
 $color-brown: rgb(71, 62, 59, 28);
+$color-medium-brown: rgb(163, 112, 75);
 $color-light-brown: rgb(186, 171, 149);
 
 $standard-padding: 10vh;
@@ -79,7 +80,7 @@ $single_bg_img: url("https://i.imgur.com/rIwvHeK.png");
     border: $button-border;
 }
 
-.buttonHoverClass {
+.buttonHoverDeleteClass {
     color: $color-beige;
     background-color: $color-brown;
     font-family: $content-font;
@@ -89,7 +90,18 @@ $single_bg_img: url("https://i.imgur.com/rIwvHeK.png");
     border: $button-border;
 }
 
+.buttonHoverAddClass {
+    color: $color-beige;
+    background-color: $color-medium-brown;
+    font-family: $content-font;
+    border-radius: $button-radius;
+    width: $button-width;
+    height: $button-height;
+    border: $button-border;
+}
+
 .inputClass {
+    padding-left: 5px ;
     border: $input-border;
     font-family: $content-font;
     border-radius: $button-radius;
@@ -122,15 +134,19 @@ $single_bg_img: url("https://i.imgur.com/rIwvHeK.png");
     align-items: baseline;
 }
 
-h2 {
-  color: $color-red;
-  font-family: $header-font;
-  font-size: $header-font-size;
-  font-weight: $header-font-weight;
+
+#title-wrapper {
+    h2 {
+    color: $color-red;
+    font-family: $header-font;
+    font-size: $header-font-size;
+    font-weight: $header-font-weight;
+    text-align: $flex-center;
+    }
 }
 
 
-nav { 
+.main-nav { 
     #nav-bar-wrapper {
         display: $header-position;
         flex-direction: $header-direction;
@@ -142,26 +158,18 @@ nav {
     a {
         color: $color-red;
         text-decoration: $no-text-decoration;
-    }
-
-    a:hover {
-        text-decoration: $underline-hover;
+        background-color: transparent;
     }
 
     button {
-       @extend .buttonClass
+       @extend .buttonClass;
+       a {
+           color: $color-beige
+       }
     }
 
     .nav-bar-button:hover {
-        @extend .buttonHoverClass
-    }
-
-
-    h2 {
-        display: $header-position;
-        flex-direction: $header-direction;
-        color: $color-red;
-        justify-content: $header-align;
+        @extend .buttonHoverDeleteClass
     }
 }
 
@@ -199,7 +207,7 @@ nav {
         @extend .buttonClass
     }
     button:hover {
-        @extend .buttonHoverClass
+        @extend .buttonHoverAddClass
     }
     
 }
@@ -207,13 +215,29 @@ nav {
 
 
 .home-page {
-    #add-list-form {
-        font-family: $content-font;
+    h2 {
+        color: $color-red;
+        font-family: $header-font;
     }
 
+    h3 {
+        font-family: $content-font;
+        font-weight: 600;
+        color: $color-brown;
+        justify-content: left;
+    }
+
+    // can you be to the left in a column? small?
     #add-list-form {
-        flex-direction: $header-direction;
-        flex-wrap: $no-wrap;
+        font-family: $content-font;
+        display: $header-position;
+        align-items: $flex-center;
+        align-content: $flex-center;
+        gap: 3vh;
+
+        button:hover {
+            @extend .buttonHoverAddClass
+        }
     }
 
     button {
@@ -222,7 +246,7 @@ nav {
     }
 
     button:hover {
-        @extend .buttonHoverClass;
+        @extend .buttonHoverDeleteClass;
         justify-items: $align-center;
     }
 
@@ -233,7 +257,6 @@ nav {
         flex-direction: $flex-column;
         align-items: $align-center;
         flex-wrap: $no-wrap;
-
     } 
 
     input {
@@ -250,6 +273,14 @@ nav {
 body {
     #each-list {
         @extend .listClass;
+        a {
+            color: $color-brown;
+            text-decoration: $no-text-decoration;
+        }
+
+        a:hover {
+            text-decoration: $underline-hover;
+        }
     }
 }
 
@@ -264,11 +295,21 @@ body {
     font-family: $content-font;
     display: $header-direction;
 
+    h2 {
+        font-family: $header-font;
+        color: $color-red;
+    }
+
+    h3 {
+        font-weight: 600;
+        color: $color-brown;
+    }
+
     button {
         @extend .buttonClass
     }
     button:hover {
-        @extend .buttonHoverClass
+        @extend .buttonHoverAddClass;
     }
 
     input {
@@ -282,6 +323,25 @@ body {
     #input-add-item {
         color: $color-brown;
     }
+
+    #add-item-title {
+        justify-content: left;
+    }
+    #each-item {
+        padding-left: 0px;
+        gap: 3vh;
+        @extend .listClass;
+        button:hover {
+            @extend .buttonHoverDeleteClass
+        }
+    }
+
+
+    // main {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // align-items: center
+    // }
 
     // #each-item {
     //     @extend .listClass;

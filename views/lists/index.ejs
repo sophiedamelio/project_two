@@ -4,11 +4,10 @@
 
 <div class="home-page">
   <div id="full-home-page">
-  <h2>Home</h2>
 
+  <h3>Add List</h3>
   <form id="add-list-form" method="POST" action="/lists">
-    <h2>Add List</h2>
-    <label id="input-text">List Title</label>
+    <label id="input-text">List Title </label>
     <input type="text"  required name="title">
     <div>
       <button type="submit" >add list</button>
@@ -19,11 +18,11 @@
   <div class="list-of-lists">
     <%lists.forEach(function(l) { %>
       <div id="each-list">
-        <form id="delete-list-form" action="/lists/<%=l.id%>?_method=DELETE" method="POST" >
         <a href="/lists/<%= l._id%>"><%=l.title%></a>
-          <div>
+        <form id="delete-list-form" action="/lists/<%=l.id%>?_method=DELETE" method="POST" >
+      
             <button type="submit">delete</button>
-          </div>
+          
       </div>
     <% }) %>
   </div>

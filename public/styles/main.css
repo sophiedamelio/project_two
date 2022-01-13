@@ -4,7 +4,7 @@
   background-color: blanchedalmond;
 }
 
-.buttonClass, .show-page button, .home-page button, .index-page button, nav button {
+.buttonClass, .show-page button, .home-page button, .index-page button, .main-nav button {
   color: #6e2e35;
   background-color: #d69362;
   font-family: "New Order", sans-serif;
@@ -14,7 +14,7 @@
   border: none;
 }
 
-.buttonHoverClass, .show-page button:hover, .home-page button:hover, .index-page button:hover, nav .nav-bar-button:hover {
+.buttonHoverDeleteClass, .show-page #each-item button:hover, .home-page button:hover, .main-nav .nav-bar-button:hover {
   color: blanchedalmond;
   background-color: #473e3b;
   font-family: "New Order", sans-serif;
@@ -24,7 +24,18 @@
   border: none;
 }
 
+.buttonHoverAddClass, .show-page button:hover, .home-page #add-list-form button:hover, .index-page button:hover {
+  color: blanchedalmond;
+  background-color: #a3704b;
+  font-family: "New Order", sans-serif;
+  border-radius: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
+}
+
 .inputClass, .show-page input, .home-page input {
+  padding-left: 5px;
   border: 1.5px solid #c45649;
   font-family: "New Order", sans-serif;
   border-radius: 25px;
@@ -48,7 +59,7 @@
   background-size: cover;
 }
 
-.listClass, body #each-list {
+.listClass, .show-page #each-item, body #each-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: "New Order", sans-serif;
@@ -56,34 +67,29 @@
   align-items: baseline;
 }
 
-h2 {
+#title-wrapper h2 {
   color: #c45649;
   font-family: "Opake", sans-serif;
   font-size: 25px;
   font-weight: lighter;
+  text-align: center;
 }
 
-nav #nav-bar-wrapper {
+.main-nav #nav-bar-wrapper {
   display: flex;
   flex-direction: row;
   color: #473e3b;
   justify-content: space-evenly;
   font-family: "New Order", sans-serif;
 }
-nav a {
+.main-nav a {
   color: #c45649;
   text-decoration: none;
+  background-color: transparent;
 }
-nav a:hover {
-  text-decoration: underline;
+.main-nav button a {
+  color: blanchedalmond;
 }
-nav h2 {
-  display: flex;
-  flex-direction: row;
-  color: #c45649;
-  justify-content: space-evenly;
-}
-
 .index-page #full-index-page {
   display: flex;
   flex-direction: column;
@@ -104,12 +110,22 @@ nav h2 {
   color: #473e3b;
   font-family: "New Order", sans-serif;
 }
-.home-page #add-list-form {
+.home-page h2 {
+  color: #c45649;
+  font-family: "Opake", sans-serif;
+}
+.home-page h3 {
   font-family: "New Order", sans-serif;
+  font-weight: 600;
+  color: #473e3b;
+  justify-content: left;
 }
 .home-page #add-list-form {
-  flex-direction: row;
-  flex-wrap: nowrap;
+  font-family: "New Order", sans-serif;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 3vh;
 }
 .home-page button {
   align-items: center;
@@ -128,6 +144,14 @@ nav h2 {
   color: #473e3b;
 }
 
+body #each-list a {
+  color: #473e3b;
+  text-decoration: none;
+}
+body #each-list a:hover {
+  text-decoration: underline;
+}
+
 .show-page {
   padding: 10vh;
   display: flex;
@@ -137,11 +161,26 @@ nav h2 {
   font-family: "New Order", sans-serif;
   display: row;
 }
+.show-page h2 {
+  font-family: "Opake", sans-serif;
+  color: #c45649;
+}
+.show-page h3 {
+  font-weight: 600;
+  color: #473e3b;
+}
 .show-page .list-of-items {
   color: #473e3b;
 }
 .show-page #input-add-item {
   color: #473e3b;
+}
+.show-page #add-item-title {
+  justify-content: left;
+}
+.show-page #each-item {
+  padding-left: 0px;
+  gap: 3vh;
 }
 
 /*# sourceMappingURL=main.css.map */

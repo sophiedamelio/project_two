@@ -1,27 +1,26 @@
 <%- include('../partials/header') %>
 <%- include('../partials/nav-bar') %>
     <div class="show-page">
-    <h2>list detail show page</h2>
     <% if (list !== undefined) { %>
 
-    <div>Title: <%=list.title%></div>
-    <div class="list-of-items">Items: 
+    <h2><%=list.title%></h2>
+    <main class="list-of-items">
+    <h3>Items: </h3>
     <% if (list.items.length) { %> <%list.items.forEach(function(i){ %>
       <div id="each-item">
+        <div><%=i.details%></div>
       <form id="delete-item-form" action="/lists/<%=list.id%>/items/<%=i._id%>?_method=DELETE" method="POST" >
         <button type="submit">purchased</button>
       </form>
-      
-
-    <!-- <div><%=// i.purchased%></div> -->
-    <div><%=i.details%></div>
+    
+    </div>
     <% }); %> <% } else { %>
     <div>no items yet</div>
     <% } %>
-  </div>
-
+    </main>
+  </br>
     <form id="add-item-form" method="POST" action="/lists/<%=list._id%>/items">
-      <h2>Add Item</h2>
+      <h3 id="add-item-title">Add Item</h3>
       <label id="input-add-item">Item Name</label>
       <input type="text" required name="details" />
       <button type="submit">Add Item</button>
