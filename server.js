@@ -60,7 +60,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use("/", indexRoutes);
-app.use("/", listRoutes);
+app.use("/lists", listRoutes);
 app.use("/", itemRoutes);
 
 // invalid request, send 404 page
