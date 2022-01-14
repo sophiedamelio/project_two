@@ -4,7 +4,7 @@
   background-color: blanchedalmond;
 }
 
-.buttonClass, .show-page button, .home-page button, .index-page button, .main-nav button {
+.buttonClass, .show-page button, .home-page button, .main-nav button {
   color: #6e2e35;
   background-color: #d69362;
   font-family: "New Order", sans-serif;
@@ -24,7 +24,7 @@
   border: none;
 }
 
-.buttonHoverAddClass, .show-page button:hover, .home-page #add-list-form button:hover, .index-page button:hover {
+.buttonHoverAddClass, .show-page button:hover, .home-page #add-list-form button:hover {
   color: blanchedalmond;
   background-color: #a3704b;
   font-family: "New Order", sans-serif;
@@ -41,17 +41,8 @@
   border-radius: 25px;
 }
 
-.threeBubsBgClass, .home-page #full-home-page, .index-page #full-index-page {
-  background-image: url("https://i.imgur.com/0I7lXeI.png");
-  background-color: blanchedalmond;
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.singleBgClass, .show-page {
-  background-image: url("https://i.imgur.com/rIwvHeK.png");
+.threeBubsBgClass, .show-page, .home-page #full-home-page {
+  background-image: url("https://i.imgur.com/O37l70H.png");
   background-color: blanchedalmond;
   height: 100vh;
   background-position: center;
@@ -87,10 +78,19 @@
   text-decoration: none;
   background-color: transparent;
 }
+.main-nav a:hover {
+  font-weight: bolder;
+}
 .main-nav button a {
   color: blanchedalmond;
 }
 .index-page #full-index-page {
+  background-image: url("https://i.imgur.com/O37l70H.png");
+  background-color: blanchedalmond;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   padding-top: 10vh;
@@ -110,6 +110,39 @@
   color: #473e3b;
   font-family: "New Order", sans-serif;
 }
+.index-page button {
+  color: #6e2e35;
+  background-color: #d69362;
+  font-family: "New Order", sans-serif;
+  border-radius: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: stretch;
+}
+.index-page button:hover {
+  color: blanchedalmond;
+  background-color: #a3704b;
+  font-family: "New Order", sans-serif;
+  border-radius: 25px;
+  width: 100px;
+  height: 30px;
+  border: none;
+}
+.index-page a {
+  color: blanchedalmond;
+  background-color: #d69362;
+  text-decoration: none;
+}
+.index-page a:hover {
+  color: blanchedalmond;
+  background-color: #a3704b;
+  text-decoration: none;
+}
+
 .home-page h2 {
   color: #c45649;
   font-family: "Opake", sans-serif;
@@ -149,7 +182,7 @@ body #each-list a {
   text-decoration: none;
 }
 body #each-list a:hover {
-  text-decoration: underline;
+  font-weight: bolder;
 }
 
 .show-page {

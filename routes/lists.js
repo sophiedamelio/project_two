@@ -5,7 +5,6 @@ const listCtrl = require("../controllers/lists");
 
 router.get("/lists", isLoggedIn, listCtrl.index);
 
-//
 router.post("/lists", isLoggedIn, listCtrl.create);
 // show page
 router.get("/lists/:listId", isLoggedIn, listCtrl.show);
