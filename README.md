@@ -24,6 +24,7 @@ ___
 - Express
 - Mongoose for mongoDB
 - Google OAuth
+- Heroku
 
 ___
 
