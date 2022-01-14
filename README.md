@@ -1,32 +1,3 @@
-
- phone - 640 or less
- tablet - 641-949
- desktop - 940 or more
- 
- 
- @mobile: ~"only screen and (max-width: 640px)";
- @tablet: ~"only screen and (min-width: 641px) and (max-width: 949px)";
-
-
-/* for Mobile */
- @media @mobile {
-     .sqs-block-image {
-         width: 30%;
-         margin: 0 auto;
-    }
-}
-
-/* for Tablet */
- @media @tablet {
-     .sqs-block-image {
-         width: 30%;
-         margin: 0 auto;
-    }
-}
-
-
-
-
 ## Wishlist App
 
 This is my wishlist app, created to help you keep track of all of the things you want to buy. 
