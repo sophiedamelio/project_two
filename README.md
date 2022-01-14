@@ -3,8 +3,8 @@
 This is my wishlist app, created to help you keep track of all of the things you want to buy. 
 ___
 
-screenshots (add last)
-### User stories to go with screenshots
+### Welcome page, prompt to login with Google ![welcome page](https://i.imgur.com/mprN4I3.png)
+
 
 ___
 
