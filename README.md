@@ -19,10 +19,20 @@ ___
 
 ### Getting Started:
 
-### Planning, wireframes, ERD, and user stories are on [This Trello Board](https://trello.com/b/vQ7wqLNI/p2)
+___
+
+### Planning, wireframes, ERD, and user stories are on [this Trello board](https://trello.com/b/vQ7wqLNI/p2)
 
 
-getting started - link to deployed app and trwllo planning
-You can login using Google and create endless lists. To add items to a list you can click on the list you want to add to, then add items on the list details page. Everything is automatically saved and tied automatically to your account.
+You can login using Google and create lists. To add items to a list you can click on the list you want to add to, then add items on the list details page. Everything is automatically saved and tied to only your account.
 
-next steps: planned future enhancements
+### Launch the app and get listing [here](https://sophie-project-two.herokuapp.com/)
+
+___
+
+### Planned future enhancements:
+- Add ability to rate importance of an item from 1-5 stars.
+
+- Add ability to see the 'purchased' items from any given list on another view.
+
+- Add ability to make book specific lists (have a slightly different input to add, including author and title).
