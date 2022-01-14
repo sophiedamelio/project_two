@@ -10,18 +10,16 @@ const itemsSchema = new Schema({
   }
 });
 
-const listSchema = new Schema(
-  {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-    title: String,
-    items: [itemsSchema],
+const listSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  title: String,
+  items: [itemsSchema],
   },
   {
-    timestamps: true,
-  }
-);
+  timestamps: true,
+});
 
 module.exports = mongoose.model("List", listSchema);

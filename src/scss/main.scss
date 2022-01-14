@@ -1,20 +1,5 @@
 // define standard variables and values for website
 
-// logistics first, frameworks
-// font, text size, border radius, buttons, links (change ejs to button?)
-// lists, inputs (change?), shadows?, margins, positioning?
-
-// delete button inline with list name, on right
-// logout button on right
-// home on left
-// hello user in center (hi, you)
-// new list form
-// new item form
-
-// nest these like they should be
-// image - vh 100?
-
-
 @import url("https://use.typekit.net/pgj0sqt.css");
 @import url("https://use.typekit.net/pgj0sqt.css");
 
@@ -22,16 +7,6 @@ $content-font: 'New Order', sans-serif;
 $header-font: 'Opake', sans-serif;
 $header-font-size: 25px;
 $header-font-weight: lighter;
-$header-position: flex;
-$header-direction: row;
-$header-align: space-evenly;
-
-$flex-column: column;
-$flex-center: center;
-$align-center: center;
-$flex-start: flex-start;
-
-$grid: grid;
 
 $button-width: 100px;
 $button-height: 30px;
@@ -42,9 +17,6 @@ $input-border: 1.5px solid rgb(196, 86, 73, 77);
 
 $underline-hover: underline;
 $no-text-decoration: none;
-
-$wrap: wrap;
-$no-wrap: nowrap;
 
 $bg-img-height: 100vh;
 $bg-position: center;
@@ -119,7 +91,7 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
 }
 
 .listClass {
-    display: $grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     font-family: $content-font;
     padding: $small-padding;
@@ -133,17 +105,17 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
     font-family: $header-font;
     font-size: $header-font-size;
     font-weight: $header-font-weight;
-    text-align: $flex-center;
+    text-align: center;
     }
 }
 
 
 .main-nav { 
     #nav-bar-wrapper {
-        display: $header-position;
-        flex-direction: $header-direction;
+        display: flex;
+        flex-direction: row;
         color: $color-brown;
-        justify-content: $header-align;
+        justify-content: space-evenly;
         font-family: $content-font;
     }
 
@@ -169,11 +141,6 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
     }
 }
 
-
-// do i want the index page left aligned?
-// lists/index is called home page
-
-
 .index-page {
     
     #full-index-page {
@@ -184,17 +151,17 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
         background-repeat: $bg-repeat;
         background-size: $bg-size;
 
-        display: $header-position;
-        flex-direction: $flex-column;
+        display: flex;
+        flex-direction: column;
         padding-top: $standard-padding;
-        align-items: $align-center;
-        flex-wrap: $no-wrap;
+        align-items: center;
+        flex-wrap: nowrap;
     }
 
     #index-header {
-        display: $header-position;
-        flex-direction: $flex-column;
-        justify-content: $flex-center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     h2 {
@@ -258,12 +225,11 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
         justify-content: left;
     }
 
-    // can you be to the left in a column? small?
     #add-list-form {
         font-family: $content-font;
-        display: $header-position;
-        align-items: $flex-center;
-        align-content: $flex-center;
+        display: flex;
+        align-items: center;
+        align-content: center;
         gap: 3vh;
 
         button:hover {
@@ -273,21 +239,21 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
 
     button {
         @extend .buttonClass;
-        align-items: $align-center;
+        align-items: center;
     }
 
     button:hover {
         @extend .buttonHoverDeleteClass;
-        justify-items: $align-center;
+        justify-items: center;
     }
 
     #full-home-page {
         @extend .threeBubsBgClass;
         padding: $standard-padding;
-        display: $header-position;
-        flex-direction: $flex-column;
-        align-items: $align-center;
-        flex-wrap: $no-wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
     } 
 
     input {
@@ -297,11 +263,6 @@ $three_bubs_bg_img: url("https://i.imgur.com/O37l70H.png");
     #input-text {
         color: $color-brown;
     } 
-}
-
-
-
-body {
     #each-list {
         @extend .listClass;
         a {
@@ -315,16 +276,16 @@ body {
     }
 }
 
+
 .show-page {
     @extend .threeBubsBgClass;
     padding: $standard-padding;
-    display: $header-position;
-    flex-direction: $flex-column;
-    align-items: $flex-start;
-    flex-wrap: $no-wrap;
-    // ^^ same as whole home page, maybe index too
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     font-family: $content-font;
-    display: $header-direction;
+    display: row;
 
     h2 {
         font-family: $header-font;
@@ -366,22 +327,4 @@ body {
             @extend .buttonHoverDeleteClass
         }
     }
-
-
-    // main {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // align-items: center
-    // }
-
-    // #each-item {
-    //     @extend .listClass;
-    // }
-
-    // these need to be inline, like some other Els..
-    // .list-of-items {
-    //     // display: $grid;
-    //     // grid-template-columns: 1fr 1fr;
-    //     // align-items: baseline;
-    // }
 }

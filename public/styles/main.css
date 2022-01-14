@@ -50,7 +50,7 @@
   background-size: cover;
 }
 
-.listClass, .show-page #each-item, body #each-list {
+.listClass, .show-page #each-item, .home-page #each-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: "New Order", sans-serif;
@@ -176,12 +176,11 @@
 .home-page #input-text {
   color: #473e3b;
 }
-
-body #each-list a {
+.home-page #each-list a {
   color: #473e3b;
   text-decoration: none;
 }
-body #each-list a:hover {
+.home-page #each-list a:hover {
   font-weight: bolder;
 }
 
