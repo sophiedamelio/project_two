@@ -11,7 +11,7 @@ ___
 ### The technologies I used to build this game are:
 - JavaScript
 - EJS
-- SCSS framework for CSS
+- SCSS for CSS
 - Node.js
 - Express
 - Mongoose for mongoDB
