@@ -3,14 +3,17 @@
 This is my wishlist app, created to help you keep track of all of the things you want to buy. 
 ___
 
-![welcome page](https://i.imgur.com/mprN4I3.png)
+![welcome page](https://i.imgur.com/7nF0XBz.png)
 Welcome page, prompt to login with Google
 
 ![login page](https://i.imgur.com/dq9ANpf.png)
 Login page
 
+![home page](https://i.imgur.com/tZNSD4a.png)
+Home page, once logged in
 
-
+![list detail page](https://i.imgur.com/BEeVtA6.png)
+List details page (once you click on a list to view the list). You can add items, and select 'purchase' to delete the item from the list.
 ___
 
 ### The technologies I used to build this game are:
