@@ -1,34 +1,31 @@
 <%- include('../partials/header') %>
 <%- include('../partials/nav-bar') %>
-    <div class="show-page">
-    <% if (list !== undefined) { %>
-
+<div class="show-page">
+  <% if (list !== undefined) { %>
     <h2><%=list.title%></h2>
     <main class="list-of-items">
-    <h3>Items: </h3>
-    <% if (list.items.length) { %> <%list.items.forEach(function(i){ %>
-      <div id="each-item">
-        <div><%=i.details%></div>
-      <form id="delete-item-form" action="/lists/<%=list.id%>/items/<%=i._id%>?_method=DELETE" method="POST" >
-        <button type="submit">purchased</button>
-      </form>
-    
-    </div>
-    <% }); %> <% } else { %>
-    <div>no items yet</div>
-    <% } %>
+      <h3>Items: </h3>
+      <% if (list.items.length) { %> <%list.items.forEach(function(i){ %>
+        <div id="each-item">
+          <div><%=i.details%></div>
+          <form id="delete-item-form" action="/lists/<%=list.id%>/items/<%=i._id%>?_method=DELETE" method="POST" >
+            <button type="submit">purchased</button>
+          </form>
+        </div>
+      <% }); %> <% } else { %>
+      <div>no items yet</div>
+      <% } %>
     </main>
-  </br>
+    </br>
+
     <form id="add-item-form" method="POST" action="/lists/<%=list._id%>/items">
       <h3 id="add-item-title">Add Item</h3>
       <label id="input-add-item">Item Name</label>
       <input type="text" required name="details" />
       <button type="submit">Add Item</button>
     </form>
-    </div>
-    <% }%>
-
-  </div>
+  <% }%>
+</div>
 
 <%- include('../partials/footer') %>
 

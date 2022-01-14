@@ -1,31 +1,28 @@
 <%- include('../partials/header') %>
 <%- include('../partials/nav-bar') %>
 
-
 <div class="home-page">
   <div id="full-home-page">
-
-  <h3>Add List</h3>
-  <form id="add-list-form" method="POST" action="/lists">
-    <label id="input-text">List Title </label>
-    <input type="text"  required name="title">
-    <div>
-      <button type="submit" >add list</button>
-    </div>
-  </form>
-  </br>
-
-  <div class="list-of-lists">
-    <%lists.forEach(function(l) { %>
-      <div id="each-list">
-        <a href="/lists/<%= l._id%>"><%=l.title%></a>
-        <form id="delete-list-form" action="/lists/<%=l.id%>?_method=DELETE" method="POST" >
-      
-            <button type="submit">delete</button>
-          
+    <h3>Add List</h3>
+    <form id="add-list-form" method="POST" action="/lists">
+      <label id="input-text">List Title </label>
+      <input type="text"  required name="title">
+      <div>
+        <button type="submit" >add list</button>
       </div>
-    <% }) %>
-  </div>
+    </form>
+    </br>
+
+    <div class="list-of-lists">
+      <%lists.forEach(function(l) { %>
+        <div id="each-list">
+          <a href="/lists/<%= l._id%>"><%=l.title%></a>
+          <form id="delete-list-form" action="/lists/<%=l.id%>?_method=DELETE" method="POST" >
+            <button type="submit">delete</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
   </div>
 </div>
 

@@ -7,8 +7,7 @@ const List = require("../models/list");
 
 // delete a list
 // method DELETE - listCtrl.delete
-// URL endppoint is /lists/:id
-
+// route is /lists/:id
 
 module.exports = {
   index,
@@ -27,15 +26,6 @@ function show(req, res, next) {
 }
 
 function index(req, res, next) {
-  // how to access the user who is logged in's ID
-  // let loggedInUser = // ?
-  // console.log(loggedInUser, '<-- user who is logged in ID?')
-  
-
-  // only allow / show the ones that user made
-  // wiring qrueiries should add the user googleID to them
-  //  console.log(req.user._id, "user google id")
-
   List.find({user: req.user._id}, function (err, listDocuments) {
     res.render("lists/index", {
       title: "Lists",
@@ -55,7 +45,6 @@ function createList(req, res, next) {
 
 function deleteList(req, res, next) {
   if (!req.params.listId) return; // (if the req.params.id does not exist, exit function)
-
   List.findOneAndDelete(req.params.listId, function (err, listDoc) {
     res.redirect( "/lists");
   });

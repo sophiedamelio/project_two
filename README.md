@@ -9,7 +9,7 @@ Welcome page, prompt to login with Google
 ![login page](https://i.imgur.com/dq9ANpf.png)
 Login page
 
-![home page](https://i.imgur.com/tZNSD4a.png)
+![home page](https://i.imgur.com/tZNSD4a.pngg)
 Home page, once logged in
 
 ![list detail page](https://i.imgur.com/BEeVtA6.png)

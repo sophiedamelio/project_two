@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-// Create your User Model
-// must include a googleId property, like in the passport example app
 
 const userSchema = new mongoose.Schema(
   {
