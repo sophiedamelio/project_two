@@ -17,16 +17,14 @@ ___
 
 ___
 
-### Getting Started:
+### Getting started:
 
-___
-
-### Planning, wireframes, ERD, and user stories are on [this Trello board](https://trello.com/b/vQ7wqLNI/p2)
+## Planning, wireframes, ERD, and user stories are on [this Trello board](https://trello.com/b/vQ7wqLNI/p2)
 
 
 You can login using Google and create lists. To add items to a list you can click on the list you want to add to, then add items on the list details page. Everything is automatically saved and tied to only your account.
 
-### Launch the app and get listing [here](https://sophie-project-two.herokuapp.com/)
+## Launch the app and get listing [here](https://sophie-project-two.herokuapp.com/)
 
 ___
 
