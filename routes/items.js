@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const itemsCtrl = require("../controllers/items");
 
-router.post("/:listId/items", isLoggedIn, itemsCtrl.create);
+router.post("/:listId", isLoggedIn, itemsCtrl.create);
 router.delete("/:listId/items/:itemId", isLoggedIn, itemsCtrl.delete);
 
 function isLoggedIn(req, res, next) {
